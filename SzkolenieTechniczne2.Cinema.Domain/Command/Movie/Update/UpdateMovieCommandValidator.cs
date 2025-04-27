@@ -1,11 +1,21 @@
 ﻿using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SzkolenieTechniczne2.Cinema.Domain.Command.Movie.Create;
 
-namespace SzkolenieTechniczne2.Cinema.Domain.Command.Movie.Create
+namespace SzkolenieTechniczne2.Cinema.Domain.Command.Movie.Update
 {
-    public class CreateMovieCommandValidator : AbstractValidator<CreateMovieCommand>
+    public class UpdateMovieCommandValidator : AbstractValidator<UpdateMovieCommand>
     {
-        public CreateMovieCommandValidator()
+        public UpdateMovieCommandValidator()
         {
+            RuleFor(x => x.Id)
+                .NotEmpty()
+                .WithMessage("ID filmu jest wymagane.");
+
             RuleFor(x => x.Name)
                 .NotEmpty()
                 .WithMessage("Nazwa filmu wymagana")

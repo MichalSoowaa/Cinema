@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using SzkolenieTechniczne2.Cinema.Domain.Repositories;
 using SzkolenieTechniczne2.Cinema.Domain.Entities;
+using SzkolenieTechniczne2.Cinema.Common.Entities;
 
 namespace SzkolenieTechniczne2.Cinema.Domain.Command.Movie.Create
 {
