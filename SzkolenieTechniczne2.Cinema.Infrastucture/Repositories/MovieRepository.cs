@@ -18,54 +18,59 @@ namespace SzkolenieTechniczne2.Cinema.Infrastucture.Repositories
             this.context = context;
         }
 
-        public void Add(Movie movie)
+        public async Task AddAsync(Movie movie)
         {
             context.Movies.Add(movie);
         }
 
-        public IEnumerable<Movie> GetAll()
+        public async Task<IEnumerable<Movie>> GetAllAsync()
         {
-            return context.Movies.ToList();
+            return await context.Movies.ToListAsync();
         }
 
-        public Movie GetById(long id)
+        public async Task<Movie> GetByIdAsync(long id)
         {
-            return context.Movies.Include(c => c.Seances).ThenInclude(c => c.Tickets).SingleOrDefault(x => x.Id == id);
+            return await context.Movies
+                .Include(c => c.Seances)
+                .ThenInclude(c => c.Tickets)
+                .SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public IEnumerable<MovieCategory> GetMovieCategories()
+        public async Task<IEnumerable<MovieCategory>> GetMovieCategoriesAsync()
         {
-            return context.MovieCategories.ToList();
+            return await context.MovieCategories.ToListAsync();
         }
 
-        public Movie GetSeanceDetails(long movieId)
+        public async Task<Movie> GetSeanceDetailsAsync(long movieId)
         {
-            return context.Movies.Where(x => x.Id == movieId).Include(t => t.Seances).FirstOrDefault();
+            return await context.Movies.Where(x => x.Id == movieId).Include(t => t.Seances).FirstOrDefaultAsync();
         }
 
-        public List<Seance> GetSeancesByMoveId(long moveId)
+        public async Task<List<Seance>> GetSeancesByMoveIdAsync(long moveId)
         {
-            return context.Seances.Where(x => x.MovieId == moveId).ToList();
+            return await context.Seances.Where(x => x.MovieId == moveId).ToListAsync();
         }
 
-        public bool IsMovieExist(string name, int year)
+        public async Task<bool> IsMovieExistAsync(string name, int year)
         {
-            return context.Movies.Any(x => x.Name == name && x.Year == year);
+            return await context.Movies.AnyAsync(x => x.Name == name && x.Year == year);
         }
 
-        public bool IsSeanceExist(DateTime seanceDate)
+        public async Task<bool> IsSeanceExistAsync(DateTime seanceDate)
         {
-            return context.Seances.Any(x => x.Date == seanceDate);
+            return await context.Seances.AnyAsync(x => x.Date == seanceDate);
         }
 
-        public void Remove(Movie movie)
+        public async Task RemoveAsync(Movie movie)
         {
-            context.Remove(movie);
+            context.Movies.Remove(movie);
+            await context.SaveChangesAsync();
         }
 
-        public void Update(Movie movie)
+        public async Task UpdateAsync(Movie movie)
         {
-            context.Update(movie);
+            context.Movies.Update(movie);
+            await context.SaveChangesAsync();
         }
     }
 }

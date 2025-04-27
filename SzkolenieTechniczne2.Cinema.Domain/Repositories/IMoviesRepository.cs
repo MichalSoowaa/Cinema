@@ -9,15 +9,15 @@ namespace SzkolenieTechniczne2.Cinema.Domain.Repositories
 {
     public interface IMoviesRepository
     {
-        Movie GetById(long id);
-        IEnumerable<Movie> GetAll();
-        IEnumerable<MovieCategory> GetMovieCategories();
-        bool IsMovieExist(string name, int year);
-        bool IsSeanceExist(DateTime seanceDate);
-        void Add(Movie movie);
-        void Update(Movie movie);
-        Movie GetSeanceDetails(long movieId);
-        List<Seance> GetSeancesByMoveId(long moveId);
-        void Remove(Movie movie);
+        Task<Movie> GetByIdAsync(long id);
+        Task<IEnumerable<Movie>> GetAllAsync();
+        Task<IEnumerable<MovieCategory>> GetMovieCategoriesAsync();
+        Task<bool> IsMovieExistAsync(string name, int year);
+        Task<bool> IsSeanceExistAsync(DateTime seanceDate);
+        Task AddAsync(Movie movie);
+        Task UpdateAsync(Movie movie);
+        Task<Movie> GetSeanceDetailsAsync(long movieId);
+        Task<List<Seance>> GetSeancesByMoveIdAsync(long moveId);
+        Task RemoveAsync(Movie movie);
     }
 }

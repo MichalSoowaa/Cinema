@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation.Results;
 
 namespace SzkolenieTechniczne2.Cinema.Domain.Command
 {
@@ -24,11 +25,11 @@ namespace SzkolenieTechniczne2.Cinema.Domain.Command
 
         public static Result Fail(string message) => new Result(false, message, Enumerable.Empty<Error>());
 
-        public static Result Fail(ValidationResult validationResult) 
+        public static Result Fail(FluentValidation.Results.ValidationResult validationResult)
             => new Result(
                 false,
                 string.Join(", ", validationResult.Errors.Select(x => x.ErrorMessage)),
-                validationResult.Errors.Select()
+                validationResult.Errors.Select(x => new Error(x.PropertyName, x.ErrorMessage)));
 
         public static Result Ok() => new Result(true, "", Enumerable.Empty<Error>());
 

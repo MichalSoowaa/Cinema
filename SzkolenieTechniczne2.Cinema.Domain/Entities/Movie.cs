@@ -16,11 +16,12 @@ namespace SzkolenieTechniczne2.Cinema.Domain.Entities
         protected Movie()
         {}
 
-        public Movie(string name, int year, int seanceTime)
+        public Movie(string name, int year, int seanceTime, long movieCategoryId)
         {
             Name = name;
             Year = year;
             SeanceTime = seanceTime;
+            MovieCategoryId = movieCategoryId;
         }
 
         [MaxLength(256)]
