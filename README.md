@@ -1,5 +1,5 @@
 Work in progress.
 
-C#, Entity Framework
+C#, Blazor, Entity Framework, MS SQL
 
 Web cinema app.
