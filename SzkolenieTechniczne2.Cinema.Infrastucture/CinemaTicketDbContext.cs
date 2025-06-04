@@ -20,7 +20,7 @@ namespace SzkolenieTechniczne2.Cinema.Infrastucture
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost;Database=cinema;Trusted_Connection=True;",
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=cinema;Trusted_Connection=True;TrustServerCertificate=True;",
                 x => x.MigrationsHistoryTable("__EFMigrationsHistory", "Cinema"));
         }
     }

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\SzkolenieTechniczne2.Cinema.Domain\SzkolenieTechniczne2.Cinema.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

@@ -8,17 +8,15 @@ namespace SzkolenieTechniczne2.Cinema.Domain.Command.Seances.Register
     internal class RegisterSeanceCommandHandler : IRequestHandler<RegisterSeanceCommand, Result>
     {
         private readonly IMoviesRepository repository;
-        private readonly IValidator<RegisterSeanceCommand> validator;
 
-        public RegisterSeanceCommandHandler(IMoviesRepository repository, IValidator<RegisterSeanceCommand> validator)
+        public RegisterSeanceCommandHandler(IMoviesRepository repository)
         {
             this.repository = repository;
-            this.validator = validator;
         }
 
         public async Task<Result> Handle(RegisterSeanceCommand command, CancellationToken cancellationToken)
         {
-            var validationResult = await validator.ValidateAsync(command, cancellationToken);
+            var validationResult = await new RegisterSeanceCommandValidator().ValidateAsync(command, cancellationToken);
 
             if (!validationResult.IsValid)
                 return Result.Fail(validationResult);

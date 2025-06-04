@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzkolenieTechniczne2.Cinema.Common", "SzkolenieTechniczne2.Cinema.Common\SzkolenieTechniczne2.Cinema.Common.csproj", "{E773BAD7-78F5-4098-86DC-C6E83B9A3918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzkolenieTechniczne2.Cinema.Common", "SzkolenieTechniczne2.Cinema.Common\SzkolenieTechniczne2.Cinema.Common.csproj", "{E773BAD7-78F5-4098-86DC-C6E83B9A3918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzkolenieTechniczne2.Cinema.Domain", "SzkolenieTechniczne2.Cinema.Domain\SzkolenieTechniczne2.Cinema.Domain.csproj", "{82E06A24-77BA-489A-B5BE-768A7006CAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzkolenieTechniczne2.Cinema.Domain", "SzkolenieTechniczne2.Cinema.Domain\SzkolenieTechniczne2.Cinema.Domain.csproj", "{82E06A24-77BA-489A-B5BE-768A7006CAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzkolenieTechniczne2.Cinema.Infrastucture", "SzkolenieTechniczne2.Cinema.Infrastucture\SzkolenieTechniczne2.Cinema.Infrastucture.csproj", "{0C18BD6D-63D9-4E5D-82BC-FFC6C4519431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzkolenieTechniczne2.Cinema.Infrastucture", "SzkolenieTechniczne2.Cinema.Infrastucture\SzkolenieTechniczne2.Cinema.Infrastucture.csproj", "{0C18BD6D-63D9-4E5D-82BC-FFC6C4519431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzkolenieTechniczne2.Cinema", "SzkolenieTechniczne2.Cinema\SzkolenieTechniczne2.Cinema.csproj", "{BCE651FE-A839-444E-9367-7DC9CEB88294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0C18BD6D-63D9-4E5D-82BC-FFC6C4519431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C18BD6D-63D9-4E5D-82BC-FFC6C4519431}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C18BD6D-63D9-4E5D-82BC-FFC6C4519431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE651FE-A839-444E-9367-7DC9CEB88294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE651FE-A839-444E-9367-7DC9CEB88294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE651FE-A839-444E-9367-7DC9CEB88294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE651FE-A839-444E-9367-7DC9CEB88294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

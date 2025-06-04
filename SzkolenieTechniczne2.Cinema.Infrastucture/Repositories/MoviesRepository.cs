@@ -1,19 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SzkolenieTechniczne2.Cinema.Domain.Entities;
 using SzkolenieTechniczne2.Cinema.Domain.Repositories;
 
 namespace SzkolenieTechniczne2.Cinema.Infrastucture.Repositories
 {
-    internal class MovieRepository : IMoviesRepository
+    public class MoviesRepository : IMoviesRepository
     {
         private readonly CinemaTicketDbContext context;
 
-        public MovieRepository(CinemaTicketDbContext context)
+        public MoviesRepository(CinemaTicketDbContext context)
         {
             this.context = context;
         }
